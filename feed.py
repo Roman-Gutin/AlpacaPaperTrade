@@ -15,6 +15,7 @@ class QuoteFeed:
     
     def __del__(self):
         self.stop()
+        del self.conn
     
     async def on_quote(self, q):
         ticker = q.symbol
