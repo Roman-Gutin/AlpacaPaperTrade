@@ -13,6 +13,8 @@ class QuoteFeed:
     def __init__(self,tickers):
         self.tickers = tickers
     
+    def __del__(self):
+        self.stop()
     
     async def on_quote(self, q):
         ticker = q.symbol
