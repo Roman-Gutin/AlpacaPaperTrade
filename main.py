@@ -44,7 +44,7 @@ while True:
     for ticker, quote in feed.live_quotes.items():
          try:
              latest_quotes [ticker].update(quote)
-          except:
+         except:
             del feed
 
 
