@@ -16,7 +16,7 @@ class QuoteFeed:
     
     async def on_quote(self, q):
         ticker = q.symbol
-        self.live_quotes[ticker] = q
+        self.live_quotes[ticker] = q._raw
          
     def connect(self):
         self.conn = Stream(ALPACA_API_KEY,
