@@ -16,25 +16,26 @@ class QuoteMetric:
                             
         for col_name, column in self.metrics.items():
             with column:
-                  st.header(self.ticker)
-                  st.metric(col_name, "0", "0")
+                st.header(self.ticker)
+                st.metric(col_name, "0", "0")
                             
                             
-                            
-     def update(self, quote):
-          for col_name, column in self.metrics.items:
-              with column:
-                   st.header(self.ticker)
-                   st.metric(
+    def update(self, quote):
+        for col_name, column in self.metrics.items:
+            with column:
+                st.header(self.ticker)
+                st.metric(
                        label = col_name, 
                        value = quote[col_name], 
                        delta = self._delta(quote, col_name)
                    )
         
-      def _delta(self,quote, field):
-           delta = (quote[field]-self.last_quote[field])/self.last_quote[field]
-           self.last_quote = quote
-           return f'{delta*100} bps'
+    def _delta(self,quote, field):
+        delta = (quote[field]-self.last_quote[field])/self.last_quote[field]
+        self.last_quote = quote
+        return f'{delta*100} bps'
+                                                          
+                            
                                                           
                             
 latest_quotes = {ticker:QuoteMetric(ticker) for ticker in tickers}
