@@ -1,4 +1,22 @@
-import streamlit
+import streamlit as st
 import pandas as pd
+from feed import QuoteFeed
+tickers = ['SQQQ','TQQQ','QQQ']
+feed = QuoteFeed(tickers)
+st.title('LETF Paper Trade Dashboard')
 
-streamlit.title('LETF Paper Trade Dashboard')
+
+# Using object notation
+add_selectbox = st.sidebar.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone")
+)
+
+# Using "with" notation
+with st.sidebar:
+    add_radio = st.radio(
+        "Choose a shipping method",
+        ("Standard (5-15 days)", "Express (2-5 days)")
+    )
+  
+
