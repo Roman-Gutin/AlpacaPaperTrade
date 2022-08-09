@@ -43,7 +43,7 @@ latest_quotes = {ticker:QuoteMetric(ticker) for ticker in tickers}
 while True:
     for ticker, quote in feed.live_quotes.items():
          try:
-             latest_quotes [ticker].update(quote)
+             latest_quotes[ticker].update(quote)
          except:
             del feed
 
