@@ -10,7 +10,7 @@ class QuoteMetric:
     fields = ['bid_price', 'ask_price']
     
     def __init__(self, ticker):
-        self.metrics = dict(zip(self.fields, st.columns(len(fields)))
+        self.metrics = dict(zip(self.fields, st.columns(len(fields))))
         self.ticker = ticker
         self.last_quote = None
                             
