@@ -11,4 +11,4 @@ for ticker, column in ticker_columns.items():
     with column:
         st.header(ticker)
         st.text('999')
-            
+        st.text('9991')   
